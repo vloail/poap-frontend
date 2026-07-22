@@ -135,3 +135,8 @@ https://sepolia-explorer.giwa.io
 **License**
 
 MIT
+
+![Solidity](https://img.shields.io/badge/Solidity-0.8.x-black)
+![Foundry](https://img.shields.io/badge/Built%20With-Foundry-orange)
+![React](https://img.shields.io/badge/React-19-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
