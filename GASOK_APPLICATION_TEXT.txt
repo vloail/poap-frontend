@@ -1,0 +1,75 @@
+Team Name: LL Labs
+
+About Us:
+LL Labs is an independent Web3 builder team focused on creating practical decentralized applications that improve the on-chain user experience.
+We specialize in rapidly building MVPs, testing new blockchain infrastructure, and delivering user-friendly products across EVM ecosystems. Our goal is to contribute meaningful applications that help expand the GIWA ecosystem.
+
+Team Member:
+LV LIAO
+Founder & Full-Stack Web3 Builder
+Nationality: Singapore
+
+Background:
+Independent Web3 Developer
+Active participant in blockchain testnets and builder programs
+Experience deploying Solidity smart contracts on EVM-compatible networks
+Familiar with React, Next.js, wagmi, Foundry and OpenZeppelin
+Experience building AI-powered Web3 applications and blockchain tooling
+Active contributor in Web3 communities and early-stage ecosystem campaigns
+
+Core Skills:
+Blockchain: Solidity, Smart Contract Development, Foundry, OpenZeppelin, ERC-20, ERC-721, Wallet Integration
+Frontend: React, TypeScript, Tailwind CSS, viem, wagmi
+Product: MVP Development, Rapid Prototyping, UX Optimization
+AI: AI Agent Integration, LLM API Integration, Workflow Automation
+
+Why GIWA:
+GIWA provides a developer-friendly environment with fast finality, low transaction costs, and EVM compatibility.
+We believe these characteristics make GIWA an excellent platform for building consumer-facing decentralized applications.
+Our goal is to create practical products that demonstrate how blockchain technology can be simple, efficient, and accessible to everyday users.
+
+Current Project:
+POAP Attendance — On-chain Proof of Attendance Protocol
+
+Features:
+- Wallet Login (MetaMask)
+- Mint Free POAP NFT with Your Name
+- 100% On-chain Metadata & SVG Image (no IPFS needed)
+- One POAP Per Address (anti-sybil)
+- Attendee Leaderboard
+- Responsive Dark Mode UI
+
+Technology Stack:
+- Solidity + Foundry + OpenZeppelin ERC-721
+- React + TypeScript + Tailwind CSS
+- wagmi + viem
+- GIWA Testnet (Chain ID: 91342)
+
+Why This Matters:
+POAP Attendance solves a real problem for event organizers — a simple, gas-efficient way to issue proof of attendance that works entirely on-chain. Attendees just connect their wallet, type their name, and mint. No external storage, no complex setup.
+
+Deployed Contract:
+0x8Cd7207d60D236F2b71c7AD677fcd45053Da0d1c
+
+Live Demo:
+https://poap-frontend.vercel.app
+
+Source Code:
+https://github.com/vloail/poap-attendance (contract)
+https://github.com/vloail/poap-frontend (frontend)
+
+Future Roadmap:
+Phase 1 — MVP Launch (current) ✅
+Phase 2 — Event Dashboard: create events, batch airdrop UI
+Phase 3 — GIWA Wallet integration: POAP as built-in attendance record
+Phase 4 — Social features: share POAP on X, follower POAP feed
+
+Vision:
+Our mission is to build lightweight, useful decentralized applications that solve real user problems while helping grow the GIWA ecosystem.
+We aim to be long-term builders contributing to GIWA's mass adoption in the Korean Web3 market.
+
+Contact:
+X: https://x.com/TheVoldron
+GitHub: https://github.com/vloail
+Email: liaolv123@gmail.com
+Wallet: 0x92f6e27502e0c5fd49df3555851c9dbf04ac1e2b

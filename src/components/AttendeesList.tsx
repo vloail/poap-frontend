@@ -19,14 +19,14 @@ export function AttendeesList() {
   return (
     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-white font-semibold text-lg">参与者</h3>
+        <h3 className="text-white font-semibold text-lg">Attendees</h3>
         <span className="px-3 py-1 rounded-full bg-yellow-400/10 text-yellow-400 text-sm border border-yellow-400/20">
-          总计: {supply}
+          Total: {supply}
         </span>
       </div>
 
       {supply === 0 ? (
-        <p className="text-gray-400 text-center py-4">还没有人铸造 POAP，成为第一个吧！</p>
+        <p className="text-gray-400 text-center py-4">No POAPs minted yet. Be the first!</p>
       ) : (
         <div className="space-y-2">
           {Array.from({ length: Math.min(supply, 20) }, (_, i) => {
@@ -35,7 +35,7 @@ export function AttendeesList() {
           })}
           {supply > 20 && (
             <p className="text-gray-500 text-center text-sm pt-2">
-              ...及另外 {supply - 20} 名参与者
+              ...and {supply - 20} more attendees
             </p>
           )}
         </div>
@@ -58,14 +58,14 @@ function AttendeeRow({ tokenId }: { tokenId: number }) {
       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-sm font-bold">
         {name?.charAt(0) || '?'}
       </div>
-      <span className="text-white flex-1">{name || '加载中...'}</span>
+      <span className="text-white flex-1">{name || 'Loading...'}</span>
       <a
         href={`${giwaTestnet.blockExplorers.default.url}/token/${POAP_CONTRACT_ADDRESS}?a=${tokenId}`}
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-500 hover:text-yellow-400 transition-colors text-sm"
       >
-        查看 ↗
+        View ↗
       </a>
     </div>
   )

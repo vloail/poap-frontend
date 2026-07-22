@@ -43,7 +43,7 @@ export function Header() {
                 onClick={() => disconnect()}
                 className="px-3 py-2 text-sm text-gray-400 hover:text-white transition-colors border border-white/10 rounded-lg hover:border-white/30"
               >
-                断开
+                Disconnect
               </button>
             </div>
           ) : (
@@ -51,7 +51,7 @@ export function Header() {
               onClick={() => connect({ connector: connectors[0], chainId: giwaTestnet.id })}
               className="px-5 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 font-semibold rounded-lg hover:from-yellow-300 hover:to-yellow-400 transition-all shadow-lg shadow-yellow-500/25"
             >
-              连接钱包
+              Connect Wallet
             </button>
           )}
         </div>

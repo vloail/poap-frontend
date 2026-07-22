@@ -57,19 +57,19 @@ export function POAPMinter() {
         <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/30">
           <span className="text-4xl">🏅</span>
         </div>
-        <h2 className="text-2xl font-bold text-white mb-2">免费领取你的 POAP</h2>
-        <p className="text-gray-400">输入名字，即刻铸造你的出席证明 NFT</p>
+        <h2 className="text-2xl font-bold text-white mb-2">Claim Your Free POAP</h2>
+        <p className="text-gray-400">Enter your name and mint your Proof of Attendance NFT</p>
       </div>
 
       {!isConnected && (
         <div className="text-center text-gray-400 py-4">
-          请先连接钱包以铸造 POAP
+          Connect your wallet to mint a POAP
         </div>
       )}
 
       {isConnected && needsNetwork && (
         <div className="text-center text-yellow-400 bg-yellow-400/10 rounded-lg p-3 mb-4">
-          请在 MetaMask 中切换到 GIWA Testnet (Chain ID: 91342)
+          Please switch to GIWA Testnet (Chain ID: 91342) in MetaMask
         </div>
       )}
 
@@ -79,7 +79,7 @@ export function POAPMinter() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="输入你的名字..."
+            placeholder="Enter your name..."
             className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition-all text-lg"
             disabled={hasMinted || isWritePending || isConfirming}
             maxLength={50}
@@ -99,14 +99,14 @@ export function POAPMinter() {
           {writeError && (
             <div className="text-red-400 text-sm bg-red-400/10 rounded-lg p-3">
               {writeError.message?.includes('already minted')
-                ? '你已铸造过 POAP，每人限领一次'
-                : `交易失败: ${writeError.message?.slice(0, 100) || '请重试'}`}
+                ? 'You already minted this POAP. One per address.'
+                : `Transaction failed: ${writeError.message?.slice(0, 100) || 'Please try again'}`}
             </div>
           )}
 
           {isConfirmed && (
             <div className="text-green-400 text-center bg-green-400/10 rounded-lg p-3 animate-pulse">
-              🎉 POAP 铸造成功！
+              🎉 POAP Minted Successfully!
             </div>
           )}
 
@@ -118,7 +118,7 @@ export function POAPMinter() {
                 rel="noopener noreferrer"
                 className="text-yellow-400 text-sm hover:underline"
               >
-                在区块浏览器中查看 →
+                View on Explorer →
               </a>
             </div>
           )}
@@ -127,7 +127,7 @@ export function POAPMinter() {
 
       {hasMinted && (
         <div className="text-center text-green-400 bg-green-400/10 rounded-lg p-4">
-          ✅ 你已成功领取了 POAP！
+          ✅ You have already claimed your POAP!
         </div>
       )}
     </div>
@@ -142,11 +142,11 @@ function getButtonText(
   confirming: boolean,
   confirmed: boolean
 ): string {
-  if (!connected) return '连接钱包'
-  if (needsNetwork) return '切换网络'
-  if (hasMinted) return '已领取 ✅'
-  if (writing) return '确认交易...'
-  if (confirming) return '铸造中... ⏳'
-  if (confirmed) return '铸造成功! 🎉'
+  if (!connected) return 'Connect Wallet'
+  if (needsNetwork) return 'Switch Network'
+  if (hasMinted) return 'Claimed ✅'
+  if (writing) return 'Confirm in Wallet...'
+  if (confirming) return 'Minting... ⏳'
+  if (confirmed) return 'Minted! 🎉'
   return '✨ Mint POAP'
 }
