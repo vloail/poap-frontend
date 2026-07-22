@@ -1,102 +1,137 @@
-POAP Attendance
-Proof of Attendance Protocol on GIWA
-🎯 Vision
+# POAP Attendance
+
+> Proof of Attendance Protocol on GIWA
+
+---
+
+## 🎯 Vision
 
 Build the on-chain attendance infrastructure on GIWA.
 
 Enable every event, conference, workshop, and community gathering to issue unique Proof of Attendance NFTs (POAPs) that users can permanently own and verify on-chain.
 
-✨ Core Features
-✅ Enter your name and mint a POAP NFT for free
-✅ One NFT per wallet to prevent duplicate claims
-✅ 100% on-chain metadata and fully on-chain SVG artwork
-✅ No external storage (No IPFS, Arweave, or centralized servers)
-✅ Fully searchable on-chain records for holders and participant names
-🏗 Tech Stack
-Smart Contract: Solidity + Foundry (OpenZeppelin ERC-721)
-Frontend: Vite + React + TypeScript + wagmi + viem
-Network: GIWA Testnet (Chain ID: 91342)
-Wallet: MetaMask
-Testing: All Foundry test suites passed successfully
-👣 User Flow
-Open the dApp
-↓
+---
+
+## ✨ Core Features
+
+- Free POAP NFT minting
+- One NFT per wallet
+- 100% on-chain metadata
+- Fully on-chain SVG artwork
+- No IPFS, Arweave, or centralized storage
+- Searchable participant names on-chain
+- ERC-721 compliant
+
+---
+
+## 🏗 Tech Stack
+
+| Layer | Technology |
+|--------|------------|
+| Smart Contract | Solidity + Foundry |
+| Standard | OpenZeppelin ERC-721 |
+| Frontend | React + Vite + TypeScript |
+| Web3 | wagmi + viem |
+| Wallet | MetaMask |
+| Network | GIWA Testnet (Chain ID: 91342) |
+
+---
+
+## 👣 User Flow
+
+```text
+Open dApp
+      ↓
 Connect MetaMask
-↓
-Switch to GIWA Testnet automatically
-↓
-Enter your name
-↓
-Click "Mint"
-↓
-Confirm the transaction in MetaMask
-↓
-Receive your POAP NFT
-📸 Demo Screenshot
+      ↓
+Switch to GIWA Testnet
+      ↓
+Enter Your Name
+      ↓
+Click Mint
+      ↓
+Confirm Transaction
+      ↓
+Receive POAP NFT
+```
 
-<img width="987" height="827" alt="image" src="https://github.com/user-attachments/assets/7cf6722e-b96d-4832-9094-d95d1d17a162" />
+---
 
+## 📸 Demo
 
-💰 Why It Fits GASOK
-Criteria	Description
-GIWA Integration	✅ Low transaction fees make free NFT minting practical
-Innovation	✅ Fully on-chain metadata and SVG without external storage
-Feasibility	✅ MVP completed and all Foundry tests passed
-Market Potential	✅ Designed for conferences, hackathons, and Web3 communities
-Ecosystem Value	✅ Can integrate with GIWA Wallet as an on-chain attendance record
-🗺 Roadmap
+![Demo](https://github.com/user-attachments/assets/6c28d68d-858b-4546-bb06-a4a3a51692b7)
 
-July 2026
+---
 
-MVP completed
-Deploy on GIWA Testnet ✅
+## 💡 Why GIWA?
 
-August – September 2026
+- Low transaction fees
+- Fast confirmations
+- Fully EVM compatible
+- Ideal for free NFT distribution
+- Great fit for hackathons, conferences, and community events
 
-Organizer dashboard
-Event management tools
-Community onboarding
+---
 
-October 2026
+## 🚀 Roadmap
 
-Mainnet deployment
-Demo at community events
+### July 2026
+- MVP completed
+- Deploy to GIWA Testnet ✅
 
-Q4 2026
+### August 2026
+- Organizer Dashboard
+- Event Management Tools
 
-GIWA Wallet integration
-Public API
-Multi-event support
-👤 Team
+### September 2026
+- Public Beta
+- Community Onboarding
+
+### Q4 2026
+- Mainnet Deployment
+- GIWA Wallet Integration
+- Multi-event Support
+
+---
+
+## 👤 Team
 
 Independent Full-Stack Web3 Builder
 
-Expertise:
+### Skills
 
-Solidity
-Foundry
-React
-TypeScript
-Smart Contract Development
-EVM Infrastructure
-Web3 Frontend Development
+- Solidity
+- Foundry
+- React
+- TypeScript
+- Smart Contract Development
+- Web3 Frontend
+- EVM Infrastructure
 
-Previous Experience:
+---
 
-Smart contract deployment on Base Mainnet
-ERC-standard application development
-🔗 Links
+## 📂 Repository Structure
 
-Live Demo
+```
+contracts/
+frontend/
+script/
+test/
+README.md
+```
+
+---
+
+## 🔗 Links
+
+**Live Demo**
 
 https://poap-frontend.vercel.app
 
-Source Code
-
-POAP Smart Contract Repository
-
-POAP Frontend Repository
-
-GIWA Explorer
+**GIWA Explorer**
 
 https://sepolia-explorer.giwa.io
+
+**License**
+
+MIT
