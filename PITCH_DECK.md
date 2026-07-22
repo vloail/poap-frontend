@@ -52,6 +52,6 @@ GIWA 链上的链上身份证明基础设施。
 - ERC-8257 Tool 部署经验 (Base 主网)
 
 ## 🔗 Links
-- Demo: (前端地址)
+- Demo: https://poap-frontend.vercel.app
 - Code: ~/poap-attendance + ~/poap-frontend
 - GIWA Explorer: https://sepolia-explorer.giwa.io
