@@ -2,7 +2,7 @@
 
 > 提交截止: 2026年7月31日
 > 赛道: Consumer / Social (Track 02)
-> 项目地址: https://github.com/你的用户名/poap-attendance
+> 项目地址: https://poap-frontend.vercel.app
 
 ---
 
