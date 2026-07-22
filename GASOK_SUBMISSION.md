@@ -1,151 +1,247 @@
-# GIWA GASOK — POAP Attendance 项目提交包
+# GIWA GASOK — POAP Attendance Submission
 
-> 提交截止: 2026年7月31日
-> 赛道: Consumer / Social (Track 02)
-> 项目地址: https://poap-frontend.vercel.app
+**Submission Deadline:** July 31, 2026
 
----
+**Track:** Consumer / Social (Track 02)
 
-## 📋 项目概述
-
-**POAP Attendance** — 一个在 GIWA 测试网上运行的免费出席证明 NFT 铸造 dApp。
-
-用户只需连接钱包、输入名字，即可免费铸造一枚 ERC-721 POAP NFT。
-所有元数据和图片完全在链上生成，不依赖 IPFS 或任何外部存储。
-
-目标：成为 GIWA 生态的「链上身份证明」基础设施，
-让每个活动、会议、课程都能发行唯一的出席证明。
+**Live Demo:** https://poap-frontend.vercel.app
 
 ---
 
-## 🧩 技术架构
+# 📋 Project Overview
+
+**POAP Attendance** is a free Proof of Attendance NFT minting dApp built on the GIWA Testnet.
+
+Users simply connect their wallet, enter their name, and mint a unique ERC-721 POAP NFT.
+
+All metadata and artwork are generated entirely on-chain without relying on IPFS, Arweave, or any centralized storage.
+
+Our vision is to become the on-chain attendance infrastructure of the GIWA ecosystem, enabling conferences, hackathons, meetups, educational programs, and community events to issue permanent attendance credentials.
+
+---
+
+# 🧩 Architecture
 
 ```
-用户 ── MetaMask ── GIWA Testnet ── POAP.sol
-                  (Chain 91342)     (ERC-721)
-                                      │
-                                  ┌───┴───┐
-                              Metadata  SVG Image
-                              (on-chain) (on-chain)
+User
+   │
+MetaMask Wallet
+   │
+GIWA Testnet (Chain ID: 91342)
+   │
+POAP.sol (ERC-721)
+   │
+├── On-chain Metadata
+└── On-chain SVG Image
 ```
 
-### 智能合约 (`src/POAP.sol`)
-- **标准**: ERC-721 + URIStorage (OpenZeppelin v5 审计通过的模板)
-- **链上元数据**: metadata JSON 和 SVG 图片全部 base64 编码嵌入链上
-  - ✅ 无需 IPFS / Arweave
-  - ✅ 永久可用，永不丢失
-  - ✅ 零依赖外部服务
-- **每人限制**: 每个地址限 mint 一次
-- **批量空投**: owner 可批量发放 (适合活动主办方)
-- **事件**: `POAPMinted(tokenId, attendee, name)` 方便前端监听
+---
 
-### 前端 (`poap-frontend/`)
-- **框架**: Vite + React + TypeScript
-- **链交互**: wagmi + viem (最前沿的 web3 React 库)
-- **钱包**: 原生 MetaMask 集成，自动切换到 GIWA Testnet
-- **样式**: Tailwind CSS 暗色主题
+# 📜 Smart Contract
 
-### 测试
-- **Foundry 测试**: 8 个测试用例全部通过
-  - 基本 Mint ✓
-  - 重复 Mint 拒绝 ✓
-  - 空名字拒绝 ✓
-  - 多人 Mint ✓
-  - 批量空投 ✓
-  - 权限控制 ✓
-  - TokenURI 输出 ✓
+**Standard**
+
+- OpenZeppelin ERC-721
+- ERC-721 URI Storage
+
+**Features**
+
+- 100% On-chain Metadata
+- Fully On-chain SVG Artwork
+- Base64 Encoded Metadata
+- No IPFS
+- No Arweave
+- No External Storage
+- Permanent NFT Assets
+- One Mint Per Wallet
+- Batch Airdrop Support
+- Event Emission
+
+```solidity
+event POAPMinted(
+    uint256 tokenId,
+    address attendee,
+    string name
+);
+```
 
 ---
 
-## 🎯 GIWA 链适配性
+# 💻 Frontend
 
-> **为什么选择 GIWA？**
-
-1. **低 gas 成本** — POAP 的核心场景是免费/极低成本铸造，GIWA 测试网零 gas 门槛完美匹配
-2. **韩国市场** — GIWA × Upbit 的战略定位，POAP 天然适合韩国线下活动、会议、教育场景
-3. **钱包嵌入潜力** — POAP 作为轻量级身份证明，可以无缝嵌入 GIWA Wallet 作为活动参与记录
-4. **Phase 1 已验证** — 合约和 dApp 已在测试网跑通，8 个测试覆盖全部核心路径
-
----
-
-## 🔥 独创性
-
-链上 NFT + 出席证明本身不新，但 **全链上元数据 + 零成本铸造 + 名字存储在合约中可查询** 的组合是独特卖点：
-
-| 特性 | POAP Attendance | 传统 POAP (poap.xyz) |
-|------|----------------|---------------------|
-| 元数据存储 | 链上 (data URI) | IPFS |
-| 图片存储 | 链上 SVG | IPFS/中心化 |
-| 名字链上可查 | ✅ 合约内 mapping | ❌ 仅 off-chain |
-| 铸造费用 | 零 gas / 极低 | 需支付 mint 费 |
-| 部署 | Foundry 已验证 | 合约不开源 |
+- React
+- Vite
+- TypeScript
+- wagmi
+- viem
+- Tailwind CSS
+- MetaMask Integration
+- Automatic GIWA Network Switching
 
 ---
 
-## 💰 市场规模
+# ✅ Testing
 
-- 全球活动 NFT 市场 (2024): ~$2.1B
-- POAP.xyz 累计铸造: >1000 万枚
-- 韩国 Web3 活动市场: KBW, Korea Blockchain Week, BUIDL Asia 等大型活动每年数十场
-- GIWA 链的韩国本土优势竞争壁垒
+All Foundry test suites passed.
 
----
-
-## 🛠 使用场景
-
-1. **活动签到** — 线下会议、Meetup、黑客松的出席证明
-2. **教育认证** — 完成课程/研讨会的链上证明
-3. **社区贡献** — DAO 贡献者的参与记录
-4. **粉丝互动** — KOL 直播/线下见面的参与凭证
-5. **GIWA Wallet 内嵌** — 用户的链上活动履历
+- Mint NFT
+- Prevent Duplicate Mint
+- Reject Empty Name
+- Multiple Users
+- Batch Airdrop
+- Access Control
+- TokenURI Generation
+- Metadata Validation
 
 ---
 
-## 📈 路线图
+# 🎯 Why GIWA?
 
-| 阶段 | 时间 | 目标 |
-|------|------|------|
-| MVP完成 | ✅ 2026.07 | 合约测试网部署 + dApp 上线 |
-| Phase 1 & 2 提交 | 2026.07.31 | GASOK 申请提交 |
-| 用户增长 | 2026.08-09 | 在韩国活动推广，目标 500 次 Mint |
-| 主办方工具 | 2026.09 | 活动创建仪表盘、批量空投 UI |
-| GIWA 主网 | 2026 Q4 | 随 GIWA 主网上线迁移 |
-| 钱包集成 | 2026 Q4 | 嵌入 GIWA Wallet |
+### Low Transaction Fees
 
----
+POAPs are designed to be free or extremely inexpensive to mint.
 
-## 👤 团队
+GIWA's low-cost infrastructure makes it an ideal environment for large-scale attendance NFTs.
 
-**个人开发者** — 全栈工程师
+### Korean Web3 Ecosystem
 
-- Solidity / Foundry 智能合约开发
-- React / TypeScript 前端开发
-- Web3 全栈 dApp 构建经验
-- 已有 ERC-8257 AI Agent Tool 部署经验 (Base 主网)
+GIWA's ecosystem is well positioned for conferences, hackathons, universities, and community events throughout Korea.
+
+### Wallet Integration
+
+POAP Attendance can naturally evolve into an activity history module inside the GIWA Wallet.
+
+### Proven MVP
+
+The smart contract and dApp have already been deployed and tested on the GIWA Testnet.
 
 ---
 
-## 🚀 快速启动
+# 🔥 Innovation
+
+While attendance NFTs already exist, POAP Attendance introduces several improvements.
+
+| Feature | POAP Attendance | Traditional POAP |
+|----------|-----------------|------------------|
+| Metadata | Fully On-chain | IPFS |
+| Artwork | On-chain SVG | IPFS |
+| Name Storage | On-chain | Off-chain |
+| External Storage | None | Required |
+| Gas Cost | Near Zero | Higher |
+| Open Source | Yes | Limited |
+
+---
+
+# 📈 Market Opportunity
+
+- Global Event NFT Market: ~$2.1B
+- POAP NFTs Minted Worldwide: 10M+
+- Strong demand from conferences, hackathons, DAOs, universities, and Web3 communities
+- Excellent fit for Korea's growing blockchain ecosystem
+
+---
+
+# 🛠 Use Cases
+
+- Conference Attendance
+- Meetups
+- Hackathons
+- Educational Certificates
+- DAO Contributor Records
+- Community Achievements
+- KOL Fan Events
+- GIWA Wallet Activity History
+
+---
+
+# 🗺 Roadmap
+
+| Phase | Timeline | Goal |
+|--------|----------|------|
+| MVP | Jul 2026 | Smart Contract + Testnet Deployment |
+| GASOK Submission | Jul 2026 | Builder Program |
+| Growth | Aug–Sep 2026 | 500+ POAP Mints |
+| Organizer Dashboard | Sep 2026 | Event Creation & Batch Distribution |
+| Mainnet | Q4 2026 | Deploy on GIWA Mainnet |
+| Wallet Integration | Q4 2026 | GIWA Wallet Support |
+
+---
+
+# 👤 Team
+
+Independent Full-Stack Web3 Builder
+
+### Expertise
+
+- Solidity
+- Foundry
+- React
+- TypeScript
+- Smart Contract Development
+- Web3 Frontend Engineering
+- EVM Infrastructure
+
+### Previous Experience
+
+- ERC-8257 AI Agent Tool Deployment
+- Base Mainnet Smart Contract Development
+
+---
+
+# 🚀 Quick Start
+
+## Smart Contract
 
 ```bash
-# 合约
 cd poap-attendance
+
 forge build
+
 forge test
+```
 
-# 部署 (需要 GIWA 测试网私钥)
-forge script script/DeployPOAP.s.sol --rpc-url giwa --broadcast
+Deploy:
 
-# 前端
+```bash
+forge script script/DeployPOAP.s.sol \
+--rpc-url giwa \
+--broadcast
+```
+
+---
+
+## Frontend
+
+```bash
 cd poap-frontend
+
 npm install
+
 npm run dev
 ```
 
 ---
 
-## 🔗 相关链接
+# 🔗 Links
 
-- GIWA GASOK: https://giwa.io/gasok
-- GIWA Testnet Explorer: https://sepolia-explorer.giwa.io
-- 项目代码: `~/poap-attendance` + `~/poap-frontend`
+### Live Demo
+
+https://poap-frontend.vercel.app
+
+### GIWA GASOK
+
+https://giwa.io/gasok
+
+### GIWA Testnet Explorer
+
+https://sepolia-explorer.giwa.io
+
+### Repository
+
+- Smart Contract
+- Frontend
+
+![Solidity](https://img.shields.io/badge/Solidity-0.8.x-black)
+![Foundry](https://img.shields.io/badge/Built%20With-Foundry-orange)
+![React](https://img.shields.io/badge/React-19-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
