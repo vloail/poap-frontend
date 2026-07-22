@@ -28,7 +28,8 @@ GIWA 链上的链上身份证明基础设施。
 ```
 
 ## 📸 Demo Screenshots
-(部署后截图插入)
+![Uploading image.png…]()
+
 
 ## 💰 GASOK Fit
 | 标准 | 匹配度 |
