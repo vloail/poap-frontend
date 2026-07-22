@@ -34,7 +34,7 @@ Confirm the transaction in MetaMask
 Receive your POAP NFT
 📸 Demo Screenshot
 
-<img width="987" height="827" alt="image" src="https://github.com/user-attachments/assets/5b1bee0a-83d0-4155-9239-aea22b693655" />
+<img width="987" height="827" alt="image" src="https://github.com/user-attachments/assets/7cf6722e-b96d-4832-9094-d95d1d17a162" />
 
 
 💰 Why It Fits GASOK
